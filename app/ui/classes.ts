@@ -16,7 +16,7 @@ export const ui = {
   link: "underline decoration-zinc-900/30 underline-offset-4 hover:decoration-zinc-900",
 
   // Cards (flyer-like)
-  card: "rounded-2xl border border-zinc-900/15 bg-white/70 backdrop-blur p-5 shadow-[0_1px_0_rgba(0,0,0,0.08)]",
+  card: "rounded-2xl border border-zinc-900/10 bg-white/10 backdrop-blur p-5 shadow-[0_1px_0_rgba(0,0,0,0.08)]",
   cardPadLg: "p-6 md:p-7",
   cardHeaderRow: "flex items-start justify-between gap-4",
   cardTitle: "text-lg font-semibold tracking-tight",
