@@ -1,0 +1,76 @@
+{
+  "Editable elements": {
+    "Featured project": {
+      "Spotify link": "string (url)",
+      "Image → maybe get from spotify?": "string (image url or sanity image asset ref)",
+      "Title": "string"
+    },
+
+    "Discography": {
+      "[multiple - albums] — supports add / remove": [
+        {
+          "Album cover front (image)": "image",
+          "Album cover back (image) [null allowed]": "image | null",
+          "Album title": "string",
+          "year": "number",
+          "Spotify link": "string (url)",
+
+          "[for each of albums] — no add / remove, permanent on album add": {
+            "List of songs": [
+              {
+                "Title": "string",
+                "Album cover? (or album id to pull album cover)": "image | string (album id)",
+                "Lyrics": "string",
+                "Credits - [plaintext, they'll decide how to cred]": "string"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "Shows / tour": {
+      "[multiple]": [
+        {
+          "Location (text)": "string",
+          "Datetime": "string (ISO date)",
+          "Ticket link [null allowed]": "string (url) | null",
+          "Headliner - [optional]": "string | null",
+          "Opener - [optional]": "string | null"
+        }
+      ]
+    },
+
+    "Band bio": "string",
+
+    "Band photo": "image",
+
+    "[multiple - band members] — no add / remove, just edit": [
+      {
+        "Band member bio, name": {
+          "name": "string",
+          "bio": "string"
+        }
+      }
+    ],
+
+    "Featured videos": {
+      "Decide later how these will be on site": "unknown, maybe youtube link"
+    },
+
+    "[multiple - press] — supports add / remove": [
+      {
+        "Press item": "object (decide fields later)"
+      }
+    ],
+
+    "[multiple - merch] — supports add / remove": [
+      {
+        "Picture": "image",
+        "Price": "number",
+        "Bandcamp merch page link (eventually shopify integration)": "string (url)",
+        "description" : "string | null"
+      }
+    ]
+  }
+}
