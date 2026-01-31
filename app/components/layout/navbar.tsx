@@ -18,9 +18,9 @@ const Navbar = () => {
             <Link href={"/press"}>press</Link>
         </span>
 
-        <div className='w-[35%] px-1 py-1 flex justify-center items-center'>
+        <div className='w-[30%] px-1 py-1 flex justify-center items-center'>
             <Link href="/">
-                <h1 className='font-irish-grover text-[4rem]'>
+                <h1 className='font-farmhouse text-[4.5rem]'>
                     WIDEMOUTH
                 </h1>
             </Link>
