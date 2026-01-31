@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import "./globals.css";
 import Navbar from "./components/layout/navbar";
-import { ui } from "./ui/classes";
+import { uiIndie as ui } from "./ui/classes";
 
 
 const geistSans = Geist({
@@ -29,6 +29,13 @@ const irishGrover = localFont({
   display: "swap",
 });
 
+const fellEnglish= localFont({
+  src: "../public/fonts/fell-english.ttf",
+  variable: "--font-fell",
+  display: "swap"
+
+});
+
 export const metadata: Metadata = {
   title: "Widemouth Band",
   description: "Landing page for the band Widemouth.",
@@ -42,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${ui.page} ${ui.shell}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${ui.page} ${ui.shell}`}
       >
         <div className="fixed inset-0 z-[-1]">
           <Image

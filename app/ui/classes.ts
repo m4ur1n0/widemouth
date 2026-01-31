@@ -1,59 +1,76 @@
 // app/ui/classes.ts
-export const ui = {
-  // Layout + rhythm
-  page: "bg-zinc-50 text-zinc-900",
-  shell: "min-h-screen",
-  container: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8",
-  section: "py-10 md:py-14 ",
-  stack: "space-y-10 md:space-y-14",
+export const uiIndie = {
+  // Global shell
+//   page: "min-h-screen bg-[#fbf7f0] text-zinc-950 antialiased",
+  // Optional: put your background image here if you use one
+  page: "min-h-screen text-zinc-950 antialiased bg-[#fbf7f0] bg-[url('/images/widemouth-landscape.png')] bg-fixed bg-cover",
 
-  // Typography
-  body: "text-[15px] leading-6 md:text-[16px] md:leading-7 text-zinc-900",
+  // Layout + rhythm (structured, not cardy)
+  container: "mx-auto w-full max-w-5xl px-5 sm:px-7 lg:px-10",
+  section: "py-10 md:py-14",
+  stack: "space-y-8 md:space-y-12",
+  inset: "px-1 sm:px-2", // small inner offset for “printed” feeling
+
+  // Type: editorial + slightly harsh
+  body: "text-[15px] leading-6 md:text-[16px] md:leading-7 text-zinc-950",
+  small: "text-[13px] leading-5 text-zinc-800",
+  label: "text-[11px] uppercase tracking-[0.22em] text-zinc-700",
+  mono: "font-mono text-[12px] tracking-tight text-zinc-700",
   h1: "text-4xl md:text-6xl font-semibold tracking-tight",
   h2: "text-2xl md:text-3xl font-semibold tracking-tight",
-  label: "text-xs uppercase tracking-widest text-zinc-600",
-  subtle: "text-sm text-zinc-600",
-  link: "underline decoration-zinc-900/30 underline-offset-4 hover:decoration-zinc-900",
+  h3: "text-xl md:text-2xl font-semibold tracking-tight",
 
-  // Cards (flyer-like)
-  card: "rounded-2xl border border-zinc-900/10 bg-white/10 backdrop-blur p-5 shadow-[0_1px_0_rgba(0,0,0,0.08)]",
-  cardPadLg: "p-6 md:p-7",
-  cardHeaderRow: "flex items-start justify-between gap-4",
-  cardTitle: "text-lg font-semibold tracking-tight",
-  cardMeta: "text-xs text-zinc-600",
+  // Links: zine-ish
+  link: "underline underline-offset-4 decoration-zinc-950/30 hover:decoration-zinc-950",
+  linkSubtle:
+    "underline underline-offset-4 decoration-zinc-950/20 hover:decoration-zinc-950/60",
 
-  // Buttons
-  btnPrimary:
-    "inline-flex items-center justify-center gap-2 rounded-full border border-zinc-900/20 bg-zinc-900 text-zinc-50 px-4 py-2 text-sm hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/30",
-  btnSecondary:
-    "inline-flex items-center justify-center gap-2 rounded-full border border-zinc-900/20 bg-transparent px-4 py-2 text-sm hover:bg-zinc-900/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/20",
-  btnGhost:
-    "inline-flex items-center justify-center gap-2 rounded-full px-3 py-2 text-sm hover:bg-zinc-900/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/20",
+  // Rules / separators (replaces modern cards)
+  rule: "border-t border-zinc-950/15",
+  ruleDotted: "border-t border-dotted border-zinc-950/30",
+  divider: "h-px bg-zinc-950/15",
 
-  // Pills / stamps
-  pill:
-    "inline-flex items-center rounded-full border border-zinc-900/15 bg-white px-2 py-0.5 text-[11px] text-zinc-700",
-  pillAccent:
-    "inline-flex items-center rounded-full border border-zinc-900/15 bg-white px-2 py-0.5 text-[11px] text-zinc-900",
+  // “Frames” (not cards): mostly border + paper + tiny shadow
+  frame:
+    "border border-zinc-950/20 bg-white/35 backdrop-blur-[1px] shadow-[0_1px_0_rgba(0,0,0,0.08)]",
+  framePad: "p-4 md:p-5",
+  frameRound: "rounded-sm", // keep it sharp / printed
 
-  // “Messy” accents (use sparingly)
-  messyHeadingWrap: "inline-block rotate-[-1deg]",
-  messyUnderline: "underline decoration-2 underline-offset-4",
+  // “Poster” block: one big composed region for messy accents
+  poster:
+    "relative overflow-hidden border border-zinc-950/20 bg-white/25",
+  posterPad: "p-5 md:p-7",
+
+  // Buttons (avoid modern pill feel)
+  btn:
+    "inline-flex items-center justify-center gap-2 border border-zinc-950/25 bg-transparent px-3 py-2 text-sm hover:bg-zinc-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950/25",
+  btnInk:
+    "inline-flex items-center justify-center gap-2 border border-zinc-950/25 bg-zinc-950 text-[#fbf7f0] px-3 py-2 text-sm hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950/25",
+
+  // Stamps / tags (small, not pill-y)
+  stamp:
+    "inline-flex items-center border border-zinc-950/25 bg-white/40 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-900",
+  stampMuted:
+    "inline-flex items-center border border-zinc-950/15 bg-white/20 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-700",
+
+  // Messy accents (use sparingly)
+  messyWrap: "inline-block -rotate-[1deg]",
+  messyUnderline: "underline decoration-2 underline-offset-4 decoration-zinc-950/60",
   messyItalic: "italic",
+  scribbleNote: "text-[12px] text-zinc-700 italic",
 
-  // 3D “pedestal”
-  pedestalOuter: "rounded-3xl border border-zinc-900/15 bg-white/60 p-4 md:p-6",
-  pedestalStage: "aspect-[16/10] w-full overflow-hidden rounded-2xl bg-zinc-100",
-  pedestalCaption: "mt-3 flex items-center justify-between gap-3 text-xs text-zinc-600",
+  // Media blocks (for 3D + images): pedestal without “modern card”
+  stageOuter: "border border-zinc-950/20 bg-white/20",
+  stagePad: "p-3 md:p-4",
+  stage:
+    "w-full overflow-hidden bg-zinc-200/40 border border-zinc-950/10",
+  stageWide: "aspect-[16/10]",
+  stageSquare: "aspect-square",
+  captionRow: "mt-2 flex items-center justify-between gap-3",
+  caption: "text-[12px] text-zinc-700",
 
-  // Simple lists / tables
-  list: "divide-y divide-zinc-900/10",
-  listRow: "py-3 flex items-start justify-between gap-4",
-  mono: "font-mono text-[12px] text-zinc-600",
+  // Lists / rows
+  list: "divide-y divide-zinc-950/12",
+  row: "py-3 flex items-baseline gap-3",
+  dots: "h-px flex-1 border-b border-dotted border-zinc-950/35 translate-y-[-2px]",
 } as const;
-
-export const ui2 = {
-  misprintWrap: "relative",
-  misprintBack:
-    "absolute inset-0 translate-x-[2px] translate-y-[2px] rounded-2xl border border-zinc-900/15 -z-10",
-};

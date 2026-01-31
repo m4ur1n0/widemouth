@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <nav className='w-full flex justify-between items-center px-12 text-[1.2rem] absolute'>
+    <nav className='w-full flex justify-between items-center px-12 py-3  text-[1.2rem] absolute'>
 
         <span className='underline'>
             <Link href={"/merch"}>merch</Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
 
         <div className='w-[30%] px-1 py-1 flex justify-center items-center'>
             <Link href="/">
-                <h1 className='font-farmhouse text-[4.5rem]'>
+                <h1 className='font-fell text-[4.2rem] scale-y-130'>
                     WIDEMOUTH
                 </h1>
             </Link>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
-import { ui } from "./ui/classes";
+import { uiIndie as ui } from "./ui/classes";
 import { CountdownTimer } from "./components/CountdownTimer";
 
 export default async function Home() {
