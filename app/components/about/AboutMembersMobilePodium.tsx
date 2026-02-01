@@ -5,6 +5,7 @@ import { uiIndie as ui } from "@/app/ui/classes";
 import BandMemberStage, { BandMemberStageRef } from "./BandMemberStage";
 import BandMemberBioPanel from "./BandMemberBioPanel";
 import { useState, useRef, useCallback } from "react";
+import { usePageVisible } from "@/app/hooks/usePageVisible";
 
 type Props = {
   members: BandMember[];
@@ -30,6 +31,7 @@ export default function AboutMembersMobilePodium({ members }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const stageRefs = useRef<Map<string, BandMemberStageRef>>(new Map());
   const selectedMember = members.find((m) => m._id === selectedId) || null;
+  const pageVisible = usePageVisible();
 
   const handleSelect = useCallback((id: string) => {
     // Reset all other models before selecting new one
@@ -66,6 +68,7 @@ export default function AboutMembersMobilePodium({ members }: Props) {
                 member={member}
                 selected={selectedId === member._id}
                 onSelect={handleSelect}
+                pageVisible={pageVisible}
               />
             </div>
           ))}
@@ -78,7 +81,7 @@ export default function AboutMembersMobilePodium({ members }: Props) {
       {/* TODO indicator for future implementation */}
       <div className="mt-4 p-3 border border-dotted border-zinc-950/20 bg-zinc-50/50">
         <p className={`${ui.scribbleNote} text-center`}>
-          → mobile "podium" experience coming soon
+          → mobile &quot;podium&quot; experience coming soon
         </p>
       </div>
     </div>
