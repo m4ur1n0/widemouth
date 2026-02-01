@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <div className={`${ui.section} flex justify-center`}>
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center py-32 px-16 space-y-24">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24">
 
         {siteSettings?.bandPhoto && (
           <div className="w-full flex justify-center">
@@ -92,7 +92,7 @@ export default async function Home() {
         {/* Newsletter */}
         <div className="w-full space-y-6 max-w-2xl my-16">
           <h2 className="text-2xl font-medium text-zinc-900 tracking-tight">
-            Stay Up To Date
+              Witness Our Motion
           </h2>
           <form className="flex gap-3">
             <input

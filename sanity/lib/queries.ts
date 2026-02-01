@@ -66,13 +66,18 @@ export const BAND_MEMBERS_QUERY = defineQuery(`
   _id,
   name,
   bio,
-  order
+  order,
+  instrument,
+  modelPath,
+  websites
 }
 `)
 
 export const PRESS_QUERY = defineQuery(`
 *[_type == "pressItem"] | order(_createdAt desc){
   _id,
-  link
+  link,
+  title,
+  description
 }
 `)

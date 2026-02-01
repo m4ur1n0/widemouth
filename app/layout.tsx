@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import "./globals.css";
 import Navbar from "./components/layout/navbar";
+import Footer from "./components/layout/footer";
 import { uiIndie as ui } from "./ui/classes";
 
 
@@ -49,9 +50,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${ui.page} ${ui.shell}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${ui.page}`}
       >
-        <div className="fixed inset-0 z-[-1]">
+        <div className="fixed inset-0 z-[-1] bg-[#fbf7f0]">
           <Image
             src="/images/widemouth-landscape.png"
             alt=""
@@ -64,6 +65,8 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+
+        <Footer />
       </body>
     </html>
   );

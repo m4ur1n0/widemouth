@@ -1,3 +1,5 @@
+
+
 // Base Sanity Types
 export interface SanityDocument {
   _id: string;
@@ -110,14 +112,21 @@ export interface MerchItemWithUrl extends MerchItem {
 export interface BandMember extends SanityDocument {
   _type: 'bandMember';
   name: string;
-  bio?: string;
-  order?: number;
+  bio: string;
+  order: number;
+  instrument: string;
+  modelPath: string;
+  websites: string[];
+  
+
 }
 
 // Press Item Document Type
 export interface PressItem extends SanityDocument {
   _type: 'pressItem';
   link: string;
+  title: string;
+  description: string;
 }
 
 // Site Settings Document Type

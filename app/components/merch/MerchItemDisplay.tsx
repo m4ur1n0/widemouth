@@ -20,7 +20,7 @@ const MerchItemDisplay = (item: MerchItem) => {
           />
         </div>
 
-        <div className={`${ui.captionRow} mt-auto`}>
+        <div className={`${ui.captionRow} `}>
           <p className="text-[14px] text-zinc-950 leading-5 line-clamp-2">
             {item.description}
           </p>

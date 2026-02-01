@@ -33,19 +33,20 @@ export default function AboutModelGallery() {
                 key={item.id}
                 className="relative aspect-square overflow-hidden rounded-xl bg-zinc-100"
               >
-                {isActive ? (
+                {/* {isActive ? ( */}
                   <>
                     <ModelViewer
                       src={MODEL_SRC}
                       poster={POSTER_SRC}
                       alt={item.title}
-                      rotationPerSecond="12deg"
+                      rotationPerSecond="20deg"
                       style={{
                         width: "100%",
                         height: "100%",
                       }}
                     />
-                    <button
+                    </>
+                    {/* <button
                       onClick={() => setActiveId(null)}
                       className="absolute right-3 top-3 rounded-md bg-black/70 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-black/90"
                     >
@@ -67,7 +68,7 @@ export default function AboutModelGallery() {
                       View 3D
                     </span>
                   </button>
-                )}
+                )} */}
               </div>
             );
           })}

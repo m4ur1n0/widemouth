@@ -12,9 +12,9 @@ const page = async () => {
 
   return (
     <div className={ui.page}>
-      <main className={ui.section}>
+      <main className={`${ui.section}`}>
         <div className={`${ui.container} ${ui.stack}`}>
-          <header className="pt-10 md:pt-16">
+          <header className="">
             <div className={ui.label}>Merch</div>
             <h1 className={`${ui.h1} mt-2`}>
               <span className={ui.messyWrap}>SHOP</span>
@@ -23,7 +23,16 @@ const page = async () => {
           </header>
 
           <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16  overflow-y-scroll max-h-[70vh] lg:max-h-[65vh] pb-32 ">
+                {merchItems && merchItems.length > 0 ? (
+                    merchItems.map((item) => (
+                        <MerchItemDisplay key={item._id} {...item} />
+                        
+                    ))
+                ) : (
+                    <p className="col-span-full text-center text-zinc-500">No merch items available</p>
+                )}
+
                 {merchItems && merchItems.length > 0 ? (
                     merchItems.map((item) => (
                         <MerchItemDisplay key={item._id} {...item} />
