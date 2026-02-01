@@ -1,3 +1,13 @@
+
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+
 // // app/page.tsx (example)
 // import { ui } from "@/app/ui/classes";
 

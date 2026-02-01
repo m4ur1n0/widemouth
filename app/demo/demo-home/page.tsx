@@ -1,3 +1,15 @@
+
+
+
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+
 // // app/page.tsx
 // import { CountdownTimer } from "@/app/components/CountdownTimer";
 // import { ui } from "@/app/ui/classes";
