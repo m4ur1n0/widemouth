@@ -9,13 +9,14 @@ type Props = {
 
 const PressItemDisplay = ({item}: Props) => {
   return (
-    <div className="flex justify-between items-center px-2">
-        <div>
-            <h3 className={`${ui.h3} mb-1`}>{item.title}</h3>
-            <p className={`${ui.body} text-zinc-700`}>{item.description}</p>
+    <div className="group py-3 transition-colors hover:bg-zinc-50/25">
+        <div className="flex items-start gap-3">
+            <span className="text-zinc-400 group-hover:text-zinc-600 transition-colors mt-1 text-sm">&rarr;</span>
+            <div className="flex-1">
+                <h3 className={`${ui.h3} mb-1 group-hover:text-zinc-900 transition-colors`}>{item.title}</h3>
+                <p className={`${ui.body} text-zinc-600 leading-relaxed`}>{item.description}</p>
+            </div>
         </div>
-
-        <p className='text-gray-600 font-bold text-2xl mr-10'>&rarr;</p>
     </div>
   )
 }

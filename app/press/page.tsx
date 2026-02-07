@@ -22,7 +22,7 @@ const page = async () => {
             <div className={`mt-6 ${ui.rule}`} />
           </header>
 
-          <section className='max-h-[60vh] md:max-h-[52vh] overflow-y-scroll pb-10'>
+          <section className=''>
             {pressItems && pressItems.length > 0 ? (
               <div className={ui.list}>
                 {pressItems.map((item) => (

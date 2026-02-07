@@ -13,15 +13,17 @@ export default async function AboutPage() {
 
   return (
     <div className={ui.page}>
-      <main className={`${ui.container} ${ui.section}`}>
-        {/* Desktop: 4 models in a row */}
-        <div className="hidden lg:block">
-          <AboutMembersDesktopRow members={members} />
-        </div>
+      <main className={`${ui.container} `}>
+        <div className={`${ui.section}`}>
+            {/* Desktop: 4 models in a row */}
+            <div className="hidden lg:block">
+            <AboutMembersDesktopRow members={members} />
+            </div>
 
-        {/* Mobile/Tablet: Scrollable/stacked layout (stub for now) */}
-        <div className="lg:hidden">
-          <AboutMembersMobilePodium members={members} />
+            {/* Mobile/Tablet: Scrollable/stacked layout (stub for now) */}
+            <div className="lg:hidden">
+            <AboutMembersMobilePodium members={members} />
+            </div>
         </div>
       </main>
     </div>

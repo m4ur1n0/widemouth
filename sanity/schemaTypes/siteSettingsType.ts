@@ -51,6 +51,34 @@ export const siteSettingsType = defineType({
       type: 'array',
       of: [{type: 'url'}],
     }),
+
+    // defineField({
+    //     name: "bandPhotos",
+    //     title: "More Band Photos",
+    //     description: "These photos appear on the /music page as you scroll down",
+    //     type: 'array',
+    //     of: [{type: 'image'}]
+    // }),
+
+    defineField({
+        name: 'email',
+        title: "Email for Contact Us",
+        description: 'Email you want to receive messages when someone uses contact us form',
+        type: 'string',
+        validation: r => r.required(),
+
+    }),
+
+    defineField({
+        name: 'substackLink',
+        title: 'Substack Link',
+        description: 'The link to your actual substack page -- if link to subscribe is different we\'ll handle that later.',
+        type: 'url',
+        validation: r => r.required(),
+
+    }),
+
+
   ],
 
   preview: {

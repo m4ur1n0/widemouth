@@ -31,22 +31,28 @@ export default function AboutMembersDesktopRow({ members }: Props) {
   return (
     <div className="w-full">
       {/* 4 Stages in Single Row */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-9 gap-4 mb-8">
         {members.map((member) => (
-          <BandMemberStage
-            key={member._id}
-            ref={(el) => {
-              if (el) {
-                stageRefs.current.set(member._id, el);
-              } else {
-                stageRefs.current.delete(member._id);
-              }
-            }}
-            member={member}
-            selected={selectedId === member._id}
-            onSelect={handleSelect}
-            pageVisible={pageVisible}
-          />
+                    
+            <div key={member._id} className={
+                `transition-all duration-300 ${selectedId == member._id ? "col-span-3" : "col-span-2"}`
+            }
+            >
+                <BandMemberStage
+                    ref={(el) => {
+                    if (el) {
+                        stageRefs.current.set(member._id, el);
+                    } else {
+                        stageRefs.current.delete(member._id);
+                    }
+                    }}
+                    member={member}
+                    selected={selectedId === member._id}
+                    onSelect={handleSelect}
+                    pageVisible={pageVisible}
+                />
+            </div>
+            
         ))}
       </div>
 

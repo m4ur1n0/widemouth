@@ -81,3 +81,11 @@ export const PRESS_QUERY = defineQuery(`
   description
 }
 `)
+
+export const SITE_SETTINGS_CONTACT_QUERY = defineQuery(`
+*[_type == "siteSettings"][0]{
+  _id,
+  email,
+  substackLink
+}
+`)

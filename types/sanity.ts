@@ -136,6 +136,8 @@ export interface SiteSettings extends SanityDocument {
   bandBio?: string;
   bandPhoto?: SanityImage;
   featuredVideos?: string[];
+  email?: string;
+  substackLink?: string;
 }
 
 // Site Settings with projected URLs (from queries)

@@ -23,7 +23,7 @@ const page = async () => {
           </header>
 
           <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16  overflow-y-scroll max-h-[70vh] lg:max-h-[65vh] pb-32 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 gap-y-16  ">
                 {merchItems && merchItems.length > 0 ? (
                     merchItems.map((item) => (
                         <MerchItemDisplay key={item._id} {...item} />

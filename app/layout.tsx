@@ -33,7 +33,8 @@ const irishGrover = localFont({
 const fellEnglish= localFont({
   src: "../public/fonts/fell-english.ttf",
   variable: "--font-fell",
-  display: "swap"
+  display: "swap",
+  preload: true
 
 });
 
