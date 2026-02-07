@@ -12,16 +12,16 @@ export default async function MusicPage() {
     });
 
     return (
-        <div className={`${uiIndie.page}`}>
-            <div className={`pt-24 px-10 `}>
+        <div className={`${uiIndie.page} relative `}>
+            <div className={`pt-24 px-10 relative`}>
                 {/* Split layout container */}
                 <div
                     className={`${uiIndie.section} relative px-10 flex flex-col lg:flex-row lg:gap-10 h-full `}
                 >
                     {/* LEFT COLUMN: Layout spacer for responsive grid (1/3 width on desktop) */}
-                    <aside className="lg:w-1/3 flex-shrink-1  sticky lg:top-36 flex flex-col">
+                    <aside className="lg:w-1/3 flex-shrink-1 sticky lg:top-28 flex flex-col border">
                         {/* Header */}
-                        <header className="space-y-3 mb-16">
+                        {/* <header className="space-y-3 mb-16">
                                 <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700">
                                     Music
                                 </div>
@@ -29,8 +29,8 @@ export default async function MusicPage() {
                                     DISCOGRAPHY
                                 </h1>
                                 <div className="mt-6 border-t border-zinc-950/15" />
-                        </header>
-                        {/* Desktop: fixed positioned image */}
+                        </header> */}
+                        {/* Sticky polaroid image */}
                         <div className="lg:w-[calc((100vw-25rem)/3)] lg:max-w-md">
                             <div className="flex items-center justify-center p-8">
                                 <div className="relative w-full h-[50vh] bg-zinc-50 border border-black/45 -rotate-6">

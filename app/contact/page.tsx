@@ -3,6 +3,7 @@ import { SITE_SETTINGS_CONTACT_QUERY } from "@/sanity/lib/queries";
 import { uiIndie as ui } from "../ui/classes";
 import ContactForm from "../components/contact/ContactForm";
 import { SocialIcon, Substack, Mail, Link, Instagram, Spotify } from "../components/shared/SocialIcons";
+import Image from "next/image";
 
 export default async function ContactPage() {
   const settings = await sanityFetch({
@@ -11,7 +12,7 @@ export default async function ContactPage() {
   });
 
   return (
-    <div className={ui.page}>
+    <div className={`${ui.page} relative`}>
       <main className={`${ui.section}`}>
         <div className={`${ui.container} ${ui.stack}`}>
           <header className="">
@@ -52,6 +53,16 @@ export default async function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Decorative image - positioned in flow */}
+        <div className="hidden md:block absolute bottom-48 right-42 w-[20vw] h-[20vw] pointer-events-none">
+          <Image
+            src="/images/cleo-normal.png"
+            alt="Cleo the dog"
+            width={1200}
+            height={1200}
+          />
         </div>
       </main>
     </div>

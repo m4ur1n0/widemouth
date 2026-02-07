@@ -55,7 +55,7 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
 
         {/* Right: Detail panel */}
         {selectedShow && (
-          <div className="lg:w-[45%] sticky top-24">
+          <div className="lg:w-[45%] sticky top-28">
             <ShowDetail show={selectedShow} onClose={() => setSelectedShowId(null)} />
           </div>
         )}
