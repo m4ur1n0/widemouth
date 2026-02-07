@@ -4,6 +4,8 @@ import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import { uiIndie as ui } from "./ui/classes";
 import { CountdownTimer } from "./components/CountdownTimer";
+import OvalChalkFrame from "./components/home/OvalOrnateFrame";
+
 
 export default async function Home() {
   const siteSettings = await sanityFetch({
@@ -17,26 +19,33 @@ export default async function Home() {
 
         {siteSettings?.bandPhoto && (
           <div className="w-full flex justify-center">
-            <div className="relative w-full max-w-2xl aspect-2/1">
-              <Image
-                src={urlFor(siteSettings.bandPhoto)
-                  .width(1200)
-                  .quality(80)
-                  .format('webp')
-                  .url()}
-                alt="Band photo"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                className="object-cover rounded-[50%]"
-                quality={90}
-                priority
-              />
+            <div className="relative w-full max-w-[34rem] aspect-[1.3/1]">
+                {/* Band Photo */}
+                <Image
+                    src={urlFor(siteSettings.bandPhoto)
+                    .width(1200)
+                    .quality(80)
+                    .format('webp')
+                    .url()}
+                    alt="Band photo"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    className="object-cover rounded-[50%]"
+                    quality={90}
+                    priority
+                />
+
+                {/* Subtle shadow for depth */}
+                <div className="absolute inset-0 rounded-[50%] shadow-inner" />
+
+                {/* Ornate Frame Overlay */}
+                <OvalChalkFrame className="z-10 pointer-events-none" />
             </div>
           </div>
         )}
 
         {/* Countdown + Album Cover */}
-        <div className="w-full grid grid-cols-2 gap-12 items-start">
+        <div className="w-full grid grid-cols-2 gap-12 items-start lg:mt-24">
           {/* Left: Countdown */}
           <div className="flex flex-col items-center justify-center h-full">
             <div className="font-mono text-3xl text-zinc-900 tracking-tight">

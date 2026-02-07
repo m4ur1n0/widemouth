@@ -12,48 +12,31 @@ export default async function MusicPage() {
     });
 
     return (
-        <div className={`${uiIndie.page} relative `}>
-            <div className={`pt-24 px-10 relative`}>
+        <div className={`${uiIndie.page} relative`}>
+            <div className="pt-24 px-4 lg:px-10 relative">
                 {/* Split layout container */}
-                <div
-                    className={`${uiIndie.section} relative px-10 flex flex-col lg:flex-row lg:gap-10 h-full `}
-                >
-                    {/* LEFT COLUMN: Layout spacer for responsive grid (1/3 width on desktop) */}
-                    <aside className="lg:w-1/3 flex-shrink-1 sticky lg:top-28 flex flex-col border">
-                        {/* Header */}
-                        {/* <header className="space-y-3 mb-16">
-                                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700">
-                                    Music
-                                </div>
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
-                                    DISCOGRAPHY
-                                </h1>
-                                <div className="mt-6 border-t border-zinc-950/15" />
-                        </header> */}
-                        {/* Sticky polaroid image */}
-                        <div className="lg:w-[calc((100vw-25rem)/3)] lg:max-w-md">
-                            <div className="flex items-center justify-center p-8">
-                                <div className="relative w-full h-[50vh] bg-zinc-50 border border-black/45 -rotate-6">
-                                    <Image
-                                        src="/images/widemouth-brand-image-1.png"
-                                        alt="Widemouth"
-                                        fill
-                                        priority
-                                        className="object-contain"
-                                        sizes="400px"
-                                    />
-                                    <HandStar className="absolute -right-2 -top-2 md:-right-3 md:-top-3 rotate-12 scale-[2.2] md:scale-[2.5] pointer-events-none z-10" />
-                                    <HandStar className="absolute -left-2 -bottom-2 md:-left-3 md:-bottom-3 -rotate-6 scale-[1.9] md:scale-[2.1] pointer-events-none z-10" />
-                                </div>
+                <div className={`${uiIndie.section} relative flex flex-col lg:flex-row lg:gap-8 h-full`}>
+                    {/* LEFT COLUMN: Sticky polaroid image */}
+                    <aside className="lg:w-1/3 shrink-0 lg:sticky lg:top-32 lg:self-start h-fit">
+                        <div className="flex items-center justify-center lg:justify-center lg:items-center lg:h-[calc(100vh-12rem)] p-4 lg:p-8">
+                            <div className="relative w-full max-w-sm lg:max-w-md aspect-3/4 bg-zinc-50 border border-black/45 -rotate-6 shadow-lg">
+                                <Image
+                                    src="/images/widemouth-brand-image-1.png"
+                                    alt="Widemouth"
+                                    fill
+                                    priority
+                                    className="object-contain p-4"
+                                    sizes="(max-width: 768px) 90vw, 400px"
+                                />
+                                <HandStar className="absolute -right-2 -top-2 md:-right-3 md:-top-3 rotate-12 scale-[2.2] md:scale-[2.5] pointer-events-none z-10" />
+                                <HandStar className="absolute -left-2 -bottom-2 md:-left-3 md:-bottom-3 -rotate-6 scale-[1.9] md:scale-[2.1] pointer-events-none z-10" />
                             </div>
                         </div>
                     </aside>
 
-                    {/* RIGHT COLUMN: Scrollable album content (2/3 width on desktop) */}
+                    {/* RIGHT COLUMN: Scrollable album content */}
                     <main className="lg:w-2/3 px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
-                        <div className="w-full max-w-2xl mx-auto px-24">
-                            
-
+                        <div className="w-full max-w-2xl mx-auto">
                             {/* Albums - single column, scrolling one by one */}
                             <section className="space-y-24 md:space-y-32">
                                 {albums && albums.length > 0 ? (
