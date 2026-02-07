@@ -37,6 +37,12 @@ export const showType = defineType({
       title: 'Opener',
       type: 'string',
     }),
+
+    defineField({
+      name: 'poster',
+      title: 'Poster',
+      type: 'image',
+    }),
   ],
 
   preview: {

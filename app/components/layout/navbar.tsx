@@ -10,7 +10,7 @@ const Navbar = () => {
   const pathname = usePathname()
 
   // Navbar is sticky on all pages except home
-  const isSticky = pathname !== '/'
+  const isSticky = pathname !== '/' && pathname !== "/studio"
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)

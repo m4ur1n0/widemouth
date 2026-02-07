@@ -5,6 +5,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { uiIndie as ui } from "./ui/classes";
 import { CountdownTimer } from "./components/CountdownTimer";
 import OvalChalkFrame from "./components/home/OvalOrnateFrame";
+import CollageStylePhoto from "./components/layout/CollageStylePhoto";
 
 
 export default async function Home() {
@@ -14,8 +15,22 @@ export default async function Home() {
   });
 
   return (
-    <div className={`${ui.section} flex justify-center`}>
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24">
+    <div className={`${ui.section} flex justify-center relative`}>
+      {/* Collage Photos - decorative background elements */}
+      <CollageStylePhoto
+        src="/images/girl-with-gun.png"
+        width={350}
+        height={350}
+        className="left-[-4%] top-[44rem] hidden md:block"
+      />
+      <CollageStylePhoto
+        src="/images/two-kids-1.png"
+        width={400}
+        height={400}
+        className="right-[-10%] md:top-[96rem] lg:top-[104rem] hidden md:block"
+      />
+
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24 relative z-10">
 
         {siteSettings?.bandPhoto && (
           <div className="w-full flex justify-center">
