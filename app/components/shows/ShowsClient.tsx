@@ -3,6 +3,7 @@
 import { Show } from "@/types/sanity";
 import { useState, useEffect } from "react";
 import { uiIndie as ui } from "@/app/ui/classes";
+import Image from "next/image";
 
 interface ShowsClientProps {
   shows: Show[];
@@ -114,7 +115,9 @@ function ShowTable({
   return (
     <div className="border border-zinc-950/20 bg-white/25">
       {/* Table header */}
-      <div className="grid grid-cols-[120px_1fr_auto] gap-4 px-4 py-3 border-b border-zinc-950/15 bg-zinc-50/50">
+      <div className={`grid grid-cols-[120px_1fr_auto] gap-4 px-4 border-b border-zinc-950/15 bg-zinc-50/50 transition-all ${
+        isCompressed ? 'py-2' : 'py-3'
+      }`}>
         <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-700 font-mono">
           Date
         </div>
@@ -145,16 +148,19 @@ function ShowTable({
                 }
               }}
               className={`
-                w-full text-left transition-colors duration-200
-                grid grid-cols-[120px_1fr_auto] gap-4 px-4 py-4
+                w-full text-left transition-all duration-200
+                grid grid-cols-[120px_1fr_auto] gap-4 px-4
                 hover:bg-zinc-950/5 focus:outline-none focus-visible:ring-2
                 focus-visible:ring-inset focus-visible:ring-zinc-950/25
                 ${isSelected ? "bg-zinc-950/10" : ""}
+                ${isCompressed ? 'py-2.5' : 'py-4'}
               `}
               aria-selected={isSelected}
             >
               {/* Date column */}
-              <div className="font-mono text-[13px] text-zinc-900 tracking-tight">
+              <div className={`font-mono text-zinc-900 tracking-tight transition-all ${
+                isCompressed ? 'text-[12px]' : 'text-[13px]'
+              }`}>
                 {formatDate(date)}
               </div>
 
@@ -163,7 +169,9 @@ function ShowTable({
                 {isSelected && (
                   <span className="text-zinc-950 text-[10px]">▸</span>
                 )}
-                <span className="text-[15px] text-zinc-950 font-medium">
+                <span className={`text-zinc-950 font-medium transition-all ${
+                  isCompressed ? 'text-[14px]' : 'text-[15px]'
+                }`}>
                   {show.location}
                 </span>
               </div>
@@ -216,6 +224,19 @@ function ShowDetail({ show, onClose }: { show: Show; onClose: () => void }) {
 
         {/* Content */}
         <div className="space-y-6 mt-2">
+          {/* Poster Image */}
+          {show.posterUrl && (
+            <div className="relative w-full aspect-[3/4] max-h-[400px] overflow-hidden border border-zinc-950/10">
+              <Image
+                src={show.posterUrl}
+                alt={`${show.location} poster`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 45vw"
+              />
+            </div>
+          )}
+
           {/* Location */}
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-2">
@@ -346,6 +367,19 @@ function ShowAccordion({
             {/* Expanded detail */}
             {isSelected && (
               <div className="px-4 pb-6 pt-2 bg-zinc-50/30 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                {/* Poster Image */}
+                {show.posterUrl && (
+                  <div className="relative w-full aspect-[3/4] max-h-[300px] overflow-hidden border border-zinc-950/10">
+                    <Image
+                      src={show.posterUrl}
+                      alt={`${show.location} poster`}
+                      fill
+                      className="object-contain"
+                      sizes="100vw"
+                    />
+                  </div>
+                )}
+
                 <div>
                   <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-1">
                     When

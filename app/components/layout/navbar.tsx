@@ -60,38 +60,38 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navigation - hidden on mobile/tablet */}
-      <nav className={`hidden lg:flex w-full justify-between items-center px-12 py-5 text-[1.2rem] z-50 transition-all duration-200 ${
+      <nav className={`hidden lg:flex w-full justify-between items-center px-12 py-5 text-[1.4rem] z-50 transition-all duration-200 ${
         isSticky ? `sticky top-0 ${getBlurClasses()}` : 'absolute'
       } ${pathname.includes("/studio") && "hidden pointer-events-none"} `}>
-        <span className='underline'>
+        <span className={`underline ${pathname === '/merch' && "font-bold"} transition-all duration-400`}>
           <Link href={"/merch"}>merch</Link>
         </span>
 
-        <span className='underline'>
+        <span className={`underline ${pathname === '/about' && "font-bold"} transition-all duration-400`}>
           <Link href={"/about"}>about</Link>
         </span>
 
-        <span className='underline'>
+        <span className={`underline ${pathname === '/press' && "font-bold"} transition-all duration-400`}>
           <Link href={"/press"}>press</Link>
         </span>
 
         <div className='w-[30%] px-1 py-1 flex justify-center items-center'>
           <Link href="/">
-            <h1 className='font-fell text-[4rem] scale-y-150 scale-x-90 select-none font-light'>
+            <h1 className='font-family-fell! text-[4rem] scale-y-150 scale-x-90 lg:scale-x-90 select-none font-light'>
               WIDEMOUTH
             </h1>
           </Link>
         </div>
 
-        <span className='underline'>
+        <span className={`underline ${pathname === '/music' && "font-bold"} transition-all duration-400`}>
           <Link href={"/music"}>music</Link>
         </span>
 
-        <span className='underline'>
+        <span className={`underline ${pathname === '/shows' && "font-bold"} transition-all duration-400`}>
           <Link href={"/shows"}>shows</Link>
         </span>
 
-        <span className='underline'>
+        <span className={`underline ${pathname === '/contact' && "font-bold"} transition-all duration-400`}>
           <Link href={"/contact"}>contact</Link>
         </span>
       </nav>

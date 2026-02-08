@@ -92,6 +92,8 @@ export interface Show extends SanityDocument {
   ticketLink?: string;
   headliner?: string;
   opener?: string;
+  poster?: SanityImage;
+  posterUrl?: string;
 }
 
 // Merch Item Document Type

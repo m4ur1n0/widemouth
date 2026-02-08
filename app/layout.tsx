@@ -38,6 +38,19 @@ const fellEnglish= localFont({
 
 });
 
+const garamond = localFont({
+  src: "../public/fonts/garamond.ttf",
+  variable: "--font-garamond",
+  display: "swap",
+  preload: true
+});
+
+const garamondItalics = localFont({
+  src: "../public/fonts/garamond-italics.ttf",
+  variable: "--font-garamond-italics",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Widemouth Band",
   description: "Landing page for the band Widemouth.",
@@ -51,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${ui.page}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${garamond.variable} ${garamondItalics.variable} ${ui.page}`}
       >
         <div className="fixed inset-0 z-[-1] bg-[#fbf7f0]">
           <Image

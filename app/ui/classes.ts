@@ -49,9 +49,9 @@ export const uiIndie = {
 
   // Stamps / tags (small, not pill-y)
   stamp:
-    "inline-flex items-center border border-zinc-950/25 bg-white/40 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-900",
+    "indie-stamp inline-flex items-center border border-zinc-950/25 bg-white/40 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-900 !font-geist-mono",
   stampMuted:
-    "inline-flex items-center border border-zinc-950/15 bg-white/20 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-700",
+    "indie-stamp inline-flex items-center border border-zinc-950/15 bg-white/20 px-2 py-0.5 text-[11px] uppercase tracking-[0.18em] text-zinc-700 !font-geist-mono",
 
   // Messy accents (use sparingly)
   messyWrap: "inline-block -rotate-[1deg]",
@@ -67,7 +67,7 @@ export const uiIndie = {
   stageWide: "aspect-[16/10]",
   stageSquare: "aspect-square",
   captionRow: "mt-2 flex items-center justify-between gap-3",
-  caption: "text-[12px] text-zinc-700",
+  caption: "indie-caption text-[12px] text-zinc-700 font-family-geist-mono",
 
   // Lists / rows
   list: "divide-y divide-zinc-950/12",

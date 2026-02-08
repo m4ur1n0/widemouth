@@ -99,7 +99,7 @@ const BandMemberStage = forwardRef<BandMemberStageRef, Props>(function BandMembe
         {/* Caption Row */}
         <div className={ui.captionRow}>
           <div className="flex flex-col gap-0.5">
-            <p className={`${ui.caption} font-medium`}>{member.name}</p>
+            <p className={`${ui.caption} !text-[16px] !font-family-garamond ${selected ? 'font-bold' : 'font-medium'}`}>{member.name}</p>
             {/* <p className={`${ui.caption} text-zinc-600`}>{member.instrument}</p> */}
             
             <span className={selected ? ui.stamp : ui.stampMuted}>{member.instrument}</span>

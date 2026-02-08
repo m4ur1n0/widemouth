@@ -47,7 +47,9 @@ export const SHOWS_QUERY = defineQuery(`
   datetime,
   ticketLink,
   headliner,
-  opener
+  opener,
+  poster,
+  "posterUrl": poster.asset->url
 }
 `)
 

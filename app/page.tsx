@@ -46,13 +46,13 @@ export default async function Home() {
         src="/images/two-kids-2.png"
         width={350}
         height={350}
-        className="left-[15%] top-[64rem] hidden md:block"
+        className="left-[15%] top-[63rem] hidden md:block"
       />
       <CollageStylePhoto
         src="/images/two-kids-1.png"
         width={400}
         height={400}
-        className="right-[10%] md:top-[86rem] lg:top-[104rem] hidden md:block"
+        className="right-[10%] md:top-[86rem] lg:top-[102rem] hidden md:block"
       />
 
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24 relative z-10">
@@ -193,7 +193,7 @@ function TourDate({ show }: { show: Show }) {
   return (
     <a
       href={`/shows#${show._id}`}
-      className="flex justify-between items-baseline border-b border-dotted border-zinc-300 pb-2 hover:bg-zinc-50 transition-colors -mx-2 px-2"
+      className="flex justify-between items-baseline border-b border-dotted border-zinc-300 pb-2 hover:bg-zinc-50/25 transition-colors -mx-2 px-2"
     >
       <span className="text-zinc-900">{show.location}</span>
       <span className="text-sm text-zinc-500 font-mono">{formattedDate}</span>

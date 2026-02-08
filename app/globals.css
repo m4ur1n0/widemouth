@@ -8,25 +8,38 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-farmhouse: var(--font-farmhouse);
-  --font-irish-grover: var(--font-irish-grover);
-  --font-fell: var(--font-fell);
+  --font-family-sans: var(--font-geist-sans);
+  --font-family-mono: var(--font-geist-mono);
+  --font-family-geist-mono: var(--font-geist-mono);
+  --font-family-farmhouse: var(--font-farmhouse);
+  --font-family-irish-grover: var(--font-irish-grover);
+  --font-family-fell: var(--font-fell);
+  --font-family-garamond: var(--font-garamond);
+  --font-family-garamond-italics: var(--font-garamond-italics);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-garamond);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    /* font-family: var(--font-fell); */
-    font-weight: 700;
+    font-family: var(--font-garamond);
+    font-weight: 500;
+}
+
+p {
+    font-family: var(--font-garamond);
+    font-weight: 200;
 }
 
 model-viewer::part(default-progress-bar),
 model-viewer::part(gesture-prompt) {
   display: none;
+}
+
+.indie-stamp {
+    font-family: var(--font-geist-mono);
 }

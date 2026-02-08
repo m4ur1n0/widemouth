@@ -18,8 +18,8 @@ export default async function MusicPage() {
                 <div className={`${uiIndie.section} relative flex flex-col lg:flex-row lg:gap-8 h-full`}>
                     {/* LEFT COLUMN: Sticky polaroid image */}
                     <aside className="lg:w-1/3 shrink-0 lg:sticky lg:top-32 lg:self-start h-fit">
-                        <div className="flex items-center justify-center lg:justify-center lg:items-center lg:h-[calc(100vh-12rem)] p-4 lg:p-8">
-                            <div className="relative w-full max-w-sm lg:max-w-md aspect-3/4 bg-zinc-50 border border-black/45 -rotate-6 shadow-lg">
+                        <div className="flex items-center justify-center lg:justify-center lg:items-center lg:h-[calc(100vh-12rem)] p-4 lg:p-8 ">
+                            <div className="relative w-[20vw] max-w-sm lg:max-w-md aspect-3/4 bg-zinc-50 border border-black/45 -rotate-6 shadow-lg">
                                 <Image
                                     src="/images/widemouth-brand-image-1.png"
                                     alt="Widemouth"
