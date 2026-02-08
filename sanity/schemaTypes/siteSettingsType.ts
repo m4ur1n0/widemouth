@@ -28,6 +28,11 @@ export const siteSettingsType = defineType({
           type: 'image',
           options: {hotspot: true},
         }),
+        defineField({
+          name: 'timerEnd',
+          title: 'Timer End',
+          type: 'datetime',
+        }),
       ],
     }),
 
@@ -72,7 +77,16 @@ export const siteSettingsType = defineType({
     defineField({
         name: 'substackLink',
         title: 'Substack Link',
-        description: 'The link to your actual substack page -- if link to subscribe is different we\'ll handle that later.',
+        description: 'The link to your actual substack site.',
+        type: 'url',
+        validation: r => r.required(),
+
+    }),
+
+    defineField({
+        name: 'substackSubscribeLink',
+        title: 'Substack Subscribe Link',
+        description: 'The endpoint we use to make people subscribe to your substack (let theo handle).',
         type: 'url',
         validation: r => r.required(),
 

@@ -6,8 +6,8 @@ export const uiIndie = {
 //   page: "min-h-screen text-zinc-950 antialiased bg-[#fbf7f0] bg-[url('/images/widemouth-landscape.png')] bg-fixed bg-cover",
 
   // Layout + rhythm (structured, not cardy)
-  container: "mx-auto w-full max-w-5xl px-5 sm:px-7 lg:px-10 pt-24 lg:pt-32",
-  section: "py-10 md:py-14",
+  container: "mx-auto w-full max-w-5xl px-5 sm:px-7 lg:px-10 pt-24 lg:pt-8",
+  section: "py-10 ",
   stack: "space-y-8 md:space-y-12",
   inset: "px-1 sm:px-2", // small inner offset for “printed” feeling
 

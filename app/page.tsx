@@ -1,23 +1,35 @@
 import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries";
+import { SITE_SETTINGS_QUERY, SHOWS_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import { uiIndie as ui } from "./ui/classes";
 import { CountdownTimer } from "./components/CountdownTimer";
 import OvalChalkFrame from "./components/home/OvalOrnateFrame";
 import CollageStylePhoto from "./components/layout/CollageStylePhoto";
+import { Show } from "@/types/sanity";
+import SubscribeToSubstack from "./components/home/SubscribeToSubstack";
+
 
 
 export default async function Home() {
-  const siteSettings = await sanityFetch({
-    query: SITE_SETTINGS_QUERY,
-    revalidate: 3600,
-  });
+  const [siteSettings, shows] = await Promise.all([
+    sanityFetch({
+      query: SITE_SETTINGS_QUERY,
+      revalidate: 3600,
+    }),
+    sanityFetch({
+      query: SHOWS_QUERY,
+      revalidate: 3600,
+    }) as Promise<Show[]>,
+  ]);
+
+
+  
 
   return (
     <div className={`${ui.section} flex justify-center relative`}>
       {/* Collage Photos - decorative background elements */}
-      <CollageStylePhoto
+      {/* <CollageStylePhoto
         src="/images/girl-with-gun.png"
         width={350}
         height={350}
@@ -28,6 +40,19 @@ export default async function Home() {
         width={400}
         height={400}
         className="right-[-10%] md:top-[96rem] lg:top-[104rem] hidden md:block"
+      /> */}
+
+      <CollageStylePhoto
+        src="/images/two-kids-2.png"
+        width={350}
+        height={350}
+        className="left-[15%] top-[64rem] hidden md:block"
+      />
+      <CollageStylePhoto
+        src="/images/two-kids-1.png"
+        width={400}
+        height={400}
+        className="right-[10%] md:top-[86rem] lg:top-[104rem] hidden md:block"
       />
 
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24 relative z-10">
@@ -70,7 +95,7 @@ export default async function Home() {
                 <CountdownTimer datetime={"02/23/2026"} />
               )}
             </div>
-            <p className="pl-5 w-full text-black/40">something&apos;s coming...</p>
+            <p className="pl-5 w-full text-gray-800">something&apos;s coming...</p>
           </div>
 
           {/* Right: Album Cover */}
@@ -101,47 +126,22 @@ export default async function Home() {
         </div>
 
         {/* Tour Dates */}
-        <div className="w-full space-y-6 my-16">
-          <h2 className="text-2xl font-medium text-zinc-900 tracking-tight">
-            Where You&apos;ll Find Us
-          </h2>
-          <div className="space-y-3">
-            <TourDate city="Madison, WI" date="01.22.26" />
-            <TourDate city="Chicago, IL" date="02.05.26" />
-            <TourDate city="Milwaukee, WI" date="02.12.26" />
-            <TourDate city="Minneapolis, MN" date="02.20.26" />
+        {shows && shows.length > 0 && (
+          <div className="w-full space-y-6 my-16">
+            <h2 className="text-2xl font-medium text-zinc-900 tracking-tight">
+              Where You&apos;ll Find Us
+            </h2>
+            <div className="space-y-3">
+              {shows.slice(0, 5).map((show) => (
+                <TourDate key={show._id} show={show} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Newsletter */}
-        <div className="w-full space-y-6 max-w-2xl my-16">
-          <h2 className="text-2xl font-medium text-zinc-900 tracking-tight">
-              Witness Our Motion
-          </h2>
-          <form className="flex gap-3">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 px-4 py-2 bg-zinc-50 border border-zinc-200 rounded text-sm focus:outline-none focus:border-zinc-400"
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 bg-zinc-800 text-zinc-50 rounded text-sm hover:bg-zinc-700"
-            >
-              Submit
-            </button>
-          </form>
-          <div className="text-sm text-zinc-500">
-            <a
-              href="https://substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-zinc-300 hover:text-zinc-900"
-            >
-              visit the substack
-            </a>
-          </div>
-        </div>
+        
+
+        <SubscribeToSubstack substackLink={siteSettings.substackLink} />
 
 
         {/* Social Links */}
@@ -186,12 +186,18 @@ function HandStar({ className = "" }: { className?: string }) {
   );
 }
 
-function TourDate({ city, date }: { city: string; date: string }) {
+function TourDate({ show }: { show: Show }) {
+  const date = new Date(show.datetime);
+  const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}.${String(date.getFullYear()).slice(-2)}`;
+
   return (
-    <div className="flex justify-between items-baseline border-b border-dotted border-zinc-300 pb-2">
-      <span className="text-zinc-900">{city}</span>
-      <span className="text-sm text-zinc-500 font-mono">{date}</span>
-    </div>
+    <a
+      href={`/shows#${show._id}`}
+      className="flex justify-between items-baseline border-b border-dotted border-zinc-300 pb-2 hover:bg-zinc-50 transition-colors -mx-2 px-2"
+    >
+      <span className="text-zinc-900">{show.location}</span>
+      <span className="text-sm text-zinc-500 font-mono">{formattedDate}</span>
+    </a>
   );
 }
 

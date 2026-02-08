@@ -13,11 +13,31 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
 
   const selectedShow = shows.find((show) => show._id === selectedShowId);
 
+  // Initialize from hash on mount and handle hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1); // Remove the # character
+      if (hash && shows.find((show) => show._id === hash)) {
+        setSelectedShowId(hash);
+      } else if (!hash) {
+        setSelectedShowId(null);
+      }
+    };
+
+    // Set initial state from hash
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [shows]);
+
   // Keyboard handler for Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setSelectedShowId(null);
+        window.history.pushState(null, "", window.location.pathname);
       }
     };
 
@@ -48,7 +68,6 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
           <ShowTable
             shows={shows}
             selectedShowId={selectedShowId}
-            onSelectShow={setSelectedShowId}
             isCompressed={!!selectedShow}
           />
         </div>
@@ -56,7 +75,13 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
         {/* Right: Detail panel */}
         {selectedShow && (
           <div className="lg:w-[45%] sticky top-28">
-            <ShowDetail show={selectedShow} onClose={() => setSelectedShowId(null)} />
+            <ShowDetail
+              show={selectedShow}
+              onClose={() => {
+                setSelectedShowId(null);
+                window.history.pushState(null, "", window.location.pathname);
+              }}
+            />
           </div>
         )}
       </div>
@@ -66,7 +91,6 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
         <ShowAccordion
           shows={shows}
           selectedShowId={selectedShowId}
-          onSelectShow={setSelectedShowId}
         />
       </div>
     </section>
@@ -77,14 +101,16 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
 function ShowTable({
   shows,
   selectedShowId,
-  onSelectShow,
   isCompressed,
 }: {
   shows: Show[];
   selectedShowId: string | null;
-  onSelectShow: (id: string) => void;
+  onSelectShow?: (id: string) => void;
   isCompressed: boolean;
 }) {
+  const handleSelectShow = (id: string) => {
+    window.location.hash = id;
+  };
   return (
     <div className="border border-zinc-950/20 bg-white/25">
       {/* Table header */}
@@ -111,11 +137,11 @@ function ShowTable({
           return (
             <button
               key={show._id}
-              onClick={() => onSelectShow(show._id)}
+              onClick={() => handleSelectShow(show._id)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
-                  onSelectShow(show._id);
+                  handleSelectShow(show._id);
                 }
               }}
               className={`
@@ -261,12 +287,18 @@ function ShowDetail({ show, onClose }: { show: Show; onClose: () => void }) {
 function ShowAccordion({
   shows,
   selectedShowId,
-  onSelectShow,
 }: {
   shows: Show[];
   selectedShowId: string | null;
-  onSelectShow: (id: string | null) => void;
+  onSelectShow?: (id: string | null) => void;
 }) {
+  const handleSelectShow = (id: string | null) => {
+    if (id) {
+      window.location.hash = id;
+    } else {
+      window.history.pushState(null, "", window.location.pathname);
+    }
+  };
   return (
     <div className="border border-zinc-950/20 bg-white/25 divide-y divide-zinc-950/10">
       {shows.map((show) => {
@@ -276,7 +308,7 @@ function ShowAccordion({
         return (
           <div key={show._id}>
             <button
-              onClick={() => onSelectShow(isSelected ? null : show._id)}
+              onClick={() => handleSelectShow(isSelected ? null : show._id)}
               className={`
                 w-full text-left px-4 py-4 hover:bg-zinc-950/5
                 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset

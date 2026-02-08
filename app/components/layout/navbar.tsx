@@ -10,7 +10,7 @@ const Navbar = () => {
   const pathname = usePathname()
 
   // Navbar is sticky on all pages except home
-  const isSticky = pathname !== '/' && pathname !== "/studio"
+  const isSticky = pathname !== '/' && !pathname.includes("/studio");
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const closeMenu = () => setIsMenuOpen(false)
@@ -62,7 +62,7 @@ const Navbar = () => {
       {/* Desktop Navigation - hidden on mobile/tablet */}
       <nav className={`hidden lg:flex w-full justify-between items-center px-12 py-5 text-[1.2rem] z-50 transition-all duration-200 ${
         isSticky ? `sticky top-0 ${getBlurClasses()}` : 'absolute'
-      }`}>
+      } ${pathname.includes("/studio") && "hidden pointer-events-none"} `}>
         <span className='underline'>
           <Link href={"/merch"}>merch</Link>
         </span>

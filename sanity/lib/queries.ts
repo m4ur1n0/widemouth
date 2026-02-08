@@ -15,7 +15,8 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     image,
     "imageUrl": image.asset->url
   },
-  featuredVideos
+  featuredVideos,
+  substackLink
 }
 `)
 
