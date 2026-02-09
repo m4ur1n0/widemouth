@@ -59,7 +59,7 @@ export default async function Home() {
 
         {siteSettings?.bandPhoto && (
           <div className="w-full flex justify-center">
-            <div className="relative w-full max-w-[34rem] aspect-[1.3/1]">
+            <div className="relative w-full max-w-[34rem] flex justify-center  aspect-[1.3/1]">
                 {/* Band Photo */}
                 <Image
                     src={urlFor(siteSettings.bandPhoto)
@@ -70,7 +70,7 @@ export default async function Home() {
                     alt="Band photo"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                    className="object-cover rounded-[50%]"
+                    className="object-cover rounded-[50%] "
                     quality={90}
                     priority
                 />
@@ -79,7 +79,7 @@ export default async function Home() {
                 <div className="absolute inset-0 rounded-[50%] shadow-inner" />
 
                 {/* Ornate Frame Overlay */}
-                <OvalChalkFrame className="z-10 pointer-events-none" />
+                <OvalChalkFrame className="z-10 pointer-events-none ml-2" />
             </div>
           </div>
         )}

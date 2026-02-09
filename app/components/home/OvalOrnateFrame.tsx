@@ -11,7 +11,7 @@ export default function OvalChalkFrame({ className = "" }: { className?: string 
         alt="Ornate Oval Frame"
         fill
         className="object-contain"
-        style={{ transform: "rotate(90deg) scale(1.6)" }}
+        style={{ transform: "rotate(90deg) scale(1.65)" }}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
         loading="eager"
       />
