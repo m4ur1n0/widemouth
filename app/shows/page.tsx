@@ -7,7 +7,7 @@ import ShowsClient from "../components/shows/ShowsClient";
 export default async function ShowsPage() {
   const shows: Show[] = await sanityFetch({
     query: SHOWS_QUERY,
-    revalidate: 3600,
+    revalidate: 300,
   });
 
   return (

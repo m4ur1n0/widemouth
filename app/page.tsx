@@ -15,11 +15,11 @@ export default async function Home() {
   const [siteSettings, shows] = await Promise.all([
     sanityFetch({
       query: SITE_SETTINGS_QUERY,
-      revalidate: 3600,
+      revalidate: 300,
     }),
     sanityFetch({
       query: SHOWS_QUERY,
-      revalidate: 3600,
+      revalidate: 300,
     }) as Promise<Show[]>,
   ]);
 

@@ -8,7 +8,7 @@ import AboutMembersMobilePodium from "../components/about/AboutMembersMobilePodi
 export default async function AboutPage() {
   const members: BandMember[] = await sanityFetch({
     query: BAND_MEMBERS_QUERY,
-    revalidate: 3600,
+    revalidate: 300,
   });
 
   return (

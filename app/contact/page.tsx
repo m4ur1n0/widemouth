@@ -8,7 +8,7 @@ import Image from "next/image";
 export default async function ContactPage() {
   const settings = await sanityFetch({
     query: SITE_SETTINGS_CONTACT_QUERY,
-    revalidate: 3600,
+    revalidate: 300,
   });
 
   return (

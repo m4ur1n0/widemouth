@@ -7,7 +7,7 @@ import { uiIndie as ui } from '../ui/classes'
 const page = async () => {
   const merchItems: MerchItemWithUrl[] = await sanityFetch({
     query: MERCH_QUERY,
-    revalidate: 3600,
+    revalidate: 300,
   })
 
   return (

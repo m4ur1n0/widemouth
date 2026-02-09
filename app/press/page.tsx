@@ -8,7 +8,7 @@ import PressItemDisplay from '../components/press/PressItemDisplay'
 const page = async () => {
   const pressItems: PressItem[] = await sanityFetch({
     query: PRESS_QUERY,
-    revalidate: 3600,
+    revalidate: 300,
   })
   
 
