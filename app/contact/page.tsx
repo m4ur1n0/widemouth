@@ -17,7 +17,7 @@ export default async function ContactPage() {
         <div className={`${ui.container} ${ui.stack}`}>
           <header className="">
             <div className={ui.label}>Get in touch</div>
-            <h1 className={`${ui.h1} mt-2`}>CONTACT</h1>
+            <h1 className={`${ui.pageTitle}`}>CONTACT</h1>
             <div className={`mt-6 ${ui.rule}`} />
           </header>
 

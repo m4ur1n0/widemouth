@@ -16,7 +16,7 @@ export default async function ShowsPage() {
         <div className={`${ui.container} ${ui.stack}`}>
           <header className="">
             <div className={ui.label}>Live</div>
-            <h1 className={`${ui.h1} mt-2`}>SHOWS</h1>
+            <h1 className={`${ui.pageTitle}`}>SHOWS</h1>
             <div className={`mt-6 ${ui.rule}`} />
           </header>
 

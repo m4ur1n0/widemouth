@@ -16,7 +16,7 @@ const page = async () => {
         <div className={`${ui.container} ${ui.stack}`}>
           <header className="">
             <div className={ui.label}>Merch</div>
-            <h1 className={`${ui.h1} mt-2`}>
+            <h1 className={`${ui.pageTitle}`}>
               <span className={ui.messyWrap}>SHOP</span>
             </h1>
             <div className={`mt-6 ${ui.rule}`} />

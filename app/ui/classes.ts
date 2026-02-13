@@ -17,6 +17,7 @@ export const uiIndie = {
   label: "text-[11px] uppercase tracking-[0.22em] text-zinc-700",
   mono: "font-mono text-[12px] tracking-tight text-zinc-700",
   h1: "text-4xl md:text-6xl font-semibold tracking-tight",
+  pageTitle: "text-3xl md:text-4xl font-semibold tracking-tight font-family-fell! scale-y-150 mt-4",
   h2: "text-2xl md:text-3xl font-semibold tracking-tight",
   h3: "text-xl md:text-2xl font-semibold tracking-tight",
 

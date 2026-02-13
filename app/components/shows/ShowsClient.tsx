@@ -63,7 +63,7 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
         {/* Left: Table list */}
         <div
           className={`transition-all duration-300 ${
-            selectedShow ? "lg:w-[55%]" : "lg:w-full"
+            selectedShow ? "lg:w-[35%]" : "lg:w-full"
           }`}
         >
           <ShowTable
@@ -75,7 +75,7 @@ export default function ShowsClient({ shows }: ShowsClientProps) {
 
         {/* Right: Detail panel */}
         {selectedShow && (
-          <div className="lg:w-[45%] sticky top-28">
+          <div className="lg:w-[65%] sticky top-28">
             <ShowDetail
               show={selectedShow}
               onClose={() => {
@@ -155,7 +155,6 @@ function ShowTable({
                 ${isSelected ? "bg-zinc-950/10" : ""}
                 ${isCompressed ? 'py-2.5' : 'py-4'}
               `}
-              aria-selected={isSelected}
             >
               {/* Date column */}
               <div className={`font-mono text-zinc-900 tracking-tight transition-all ${
@@ -223,80 +222,83 @@ function ShowDetail({ show, onClose }: { show: Show; onClose: () => void }) {
         </button>
 
         {/* Content */}
-        <div className="space-y-6 mt-2">
+        <div className="mt-2 flex gap-6">
           {/* Poster Image */}
           {show.posterUrl && (
-            <div className="relative w-full aspect-[3/4] max-h-[400px] overflow-hidden border border-zinc-950/10">
+            <div className="relative w-[220px] aspect-4/5 flex-shrink-0 overflow-hidden border border-zinc-950/10">
               <Image
                 src={show.posterUrl}
                 alt={`${show.location} poster`}
                 fill
                 className="object-contain"
-                sizes="(max-width: 768px) 100vw, 45vw"
+                sizes="180px"
               />
             </div>
           )}
 
-          {/* Location */}
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-2">
-              Venue
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-950">
-              {show.location}
-            </h2>
-          </div>
-
-          {/* Date & Time */}
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-1">
-              When
-            </div>
-            <div className="text-[15px] text-zinc-900 space-y-0.5">
-              <div className="font-mono">{formatDateLong(date)}</div>
-              <div className="font-mono text-zinc-700">{formatTime(date)}</div>
-            </div>
-          </div>
-
-          {/* Lineup */}
-          {(show.headliner || show.opener) && (
+          {/* Info column */}
+          <div className="flex-1 space-y-6">
+            {/* Location */}
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-2">
-                Lineup
+                Venue
               </div>
-              <div className="space-y-1.5 text-[15px]">
-                {show.headliner && (
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-[11px] text-zinc-500">Headliner:</span>
-                    <span className="text-zinc-950">{show.headliner}</span>
-                  </div>
-                )}
-                {show.opener && (
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-[11px] text-zinc-500">Opener:</span>
-                    <span className="text-zinc-950">{show.opener}</span>
-                  </div>
-                )}
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-950">
+                {show.location}
+              </h2>
+            </div>
+
+            {/* Date & Time */}
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-1">
+                When
+              </div>
+              <div className="text-[15px] text-zinc-900 space-y-0.5">
+                <div className="font-mono">{formatDateLong(date)}</div>
+                <div className="font-mono text-zinc-700">{formatTime(date)}</div>
               </div>
             </div>
-          )}
 
-          {/* Tickets */}
-          <div className="pt-4 border-t border-zinc-950/15">
-            {show.ticketLink ? (
-              <a
-                href={show.ticketLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full border border-zinc-950/25 bg-zinc-950 text-[#fbf7f0] px-4 py-3 text-sm uppercase tracking-[0.18em] hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950/25 transition-colors"
-              >
-                Get Tickets
-              </a>
-            ) : (
-              <div className="text-center text-[13px] text-zinc-500 italic py-2">
-                Ticket info coming soon
+            {/* Lineup */}
+            {(show.headliner || show.opener) && (
+              <div>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-zinc-700 mb-2">
+                  Lineup
+                </div>
+                <div className="space-y-1.5 text-[15px]">
+                  {show.headliner && (
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[11px] text-zinc-500">Headliner:</span>
+                      <span className="text-zinc-950">{show.headliner}</span>
+                    </div>
+                  )}
+                  {show.opener && (
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[11px] text-zinc-500">Opener:</span>
+                      <span className="text-zinc-950">{show.opener}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
+
+            {/* Tickets */}
+            <div className="pt-4 border-t border-zinc-950/15">
+              {show.ticketLink ? (
+                <a
+                  href={show.ticketLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full border border-zinc-950/25 bg-zinc-950 text-[#fbf7f0] px-4 py-3 text-sm uppercase tracking-[0.18em] hover:bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950/25 transition-colors"
+                >
+                  Get Tickets
+                </a>
+              ) : (
+                <div className="text-center text-[13px] text-zinc-500 italic py-2">
+                  Ticket info coming soon
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
