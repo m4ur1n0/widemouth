@@ -62,16 +62,60 @@ export default async function MusicPage() {
                             className="-right-[2%] md:top-[23rem] lg:top-[20rem] hidden md:block"
                         />
                         <CollageStylePhoto
+                            src="/images/decoration1.png"
+                            width={400}
+                            height={400}
+                            className="right-[7%] top-[39rem] hidden md:block"
+                        />
+
+                        <CollageStylePhoto
                             src="/images/decoration0.png"
                             width={200}
                             height={200}
                             className="-left-[5%] top-[57rem] hidden md:block"
                         />
+                        
+                        
                         <CollageStylePhoto
-                            src="/images/decoration1.png"
+                            src="/images/decoration4.png"
                             width={400}
                             height={400}
                             className="right-[7%] top-[39rem] hidden md:block"
+                        />
+                        
+                        
+                        
+                        <CollageStylePhoto
+                            src="/images/decoration7.png"
+                            width={300}
+                            height={300}
+                            className="-left-[5%] top-[88rem] hidden md:block"
+                        />
+
+                        <CollageStylePhoto
+                            src="/images/decoration3.png"
+                            width={400}
+                            height={400}
+                            className="-right-[7%] top-[98rem] hidden md:block"
+                        />
+                        <CollageStylePhoto
+                            src="/images/decoration6.png"
+                            width={150}
+                            height={150}
+                            className="right-[7%] top-[113rem] hidden md:block"
+                        />
+
+                        <CollageStylePhoto
+                            src="/images/decoration5.png"
+                            width={400}
+                            height={400}
+                            className="-left-[3%] top-[105rem] hidden md:block"
+                        />
+                        <CollageStylePhoto
+                            src="/images/decoration8.png"
+                            width={200}
+                            height={200}
+                            className="left-[6%] top-[75rem] hidden md:block"
                         />
 
                         {/* Albums - single column, scrolling one by one */}

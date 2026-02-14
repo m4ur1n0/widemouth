@@ -6,7 +6,7 @@ const Footer = () => {
     const pathname = usePathname();
 
   return (
-    <footer className={`w-full py-8 mt-16 ${pathname.includes("/studio") && "hidden!"}`}>
+    <footer className={`z-50 w-full py-8 mt-16 ${pathname.includes("/studio") && "hidden!"}`}>
       <div className={`${ui.container} text-center`}>
         <div className={`${ui.rule} mb-6`} />
         <p className={ui.small}>

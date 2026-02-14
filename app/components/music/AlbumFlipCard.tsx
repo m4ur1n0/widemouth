@@ -73,7 +73,7 @@ export default function AlbumFlipCard({
           >
             {/* Front face */}
             <div
-              className="flip-card-face flip-card-front absolute inset-0 border border-zinc-950/25 bg-zinc-100 overflow-hidden shadow-[0_2px_4px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.4)]"
+              className="flip-card-face flip-card-front absolute inset-0 border border-zinc-950/30 bg-zinc-100 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.4)]"
               style={{
                 backfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",
@@ -100,7 +100,7 @@ export default function AlbumFlipCard({
 
             {/* Back face */}
             <div
-              className="flip-card-face flip-card-back absolute inset-0 border border-zinc-950/25 bg-zinc-100 overflow-hidden shadow-[0_2px_4px_rgba(0,0,0,0.12)]"
+              className="flip-card-face flip-card-back absolute inset-0 border border-zinc-950/30 bg-zinc-100 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.15),0_2px_4px_rgba(0,0,0,0.1)]"
               style={{
                 backfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",

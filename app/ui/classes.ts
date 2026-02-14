@@ -1,7 +1,7 @@
 // app/ui/classes.ts
 export const uiIndie = {
   // Global shell
-  page: "min-h-screen text-zinc-950 antialiased",
+  page: "min-h-screen text-zinc-950 antialiased ",
   // Optional: put your background image here if you use one
 //   page: "min-h-screen text-zinc-950 antialiased bg-[#fbf7f0] bg-[url('/images/widemouth-landscape.png')] bg-fixed bg-cover",
 

@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${garamond.variable} ${garamondItalics.variable} ${ui.page}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${garamond.variable} ${garamondItalics.variable} ${ui.page} w-screen overflow-x-hidden`}
       >
         <div className="fixed inset-0 z-[-1] bg-[#fbf7f0]">
           <Image
