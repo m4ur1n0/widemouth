@@ -110,6 +110,7 @@ function ShowTable({
   isCompressed: boolean;
 }) {
   const handleSelectShow = (id: string) => {
+    // eslint-disable-next-line react-hooks/immutability
     window.location.hash = id;
   };
   return (
@@ -317,6 +318,7 @@ function ShowAccordion({
 }) {
   const handleSelectShow = (id: string | null) => {
     if (id) {
+      // eslint-disable-next-line react-hooks/immutability
       window.location.hash = id;
     } else {
       window.history.pushState(null, "", window.location.pathname);

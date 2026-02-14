@@ -23,6 +23,12 @@ export const pressItemType = defineType({
           type: 'text',
           validation: r => r.required(),
         }),
+    defineField({
+        name: "pageOrder",
+        title: "Page Order Rank [0-indexed, but doesn't actually matter that much",
+        type: 'number',
+        validation: r => r.required(),
+    })
 
   ],
   preview: {

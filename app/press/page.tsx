@@ -10,7 +10,9 @@ const page = async () => {
     query: PRESS_QUERY,
     revalidate: 300,
   })
-  
+
+  // Sort by pageOrder (lowest to highest), tolerant of collisions
+  const sortedPressItems = [...pressItems].sort((a, b) => a.pageOrder - b.pageOrder)
 
   return (
     <div className={ui.page}>
@@ -23,15 +25,15 @@ const page = async () => {
           </header>
 
           <section className=''>
-            {pressItems && pressItems.length > 0 ? (
+            {sortedPressItems && sortedPressItems.length > 0 ? (
               <div className={ui.list}>
-                {pressItems.map((item) => (
+                {sortedPressItems.map((item) => (
                   <Link
                     key={item._id}
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block py-6 hover:bg-white/20 transition-colors"
+                    className="block py-6 "
                   >
                     <PressItemDisplay item={item}/>
                   </Link>

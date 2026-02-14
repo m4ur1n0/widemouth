@@ -30,7 +30,7 @@ export const siteSettingsType = defineType({
         }),
         defineField({
           name: 'timerEnd',
-          title: 'Timer End',
+          title: 'Timer End (Date/time project drops)',
           type: 'datetime',
         }),
       ],
@@ -90,6 +90,34 @@ export const siteSettingsType = defineType({
         type: 'url',
         validation: r => r.required(),
 
+    }),
+
+    defineField({
+        name: 'instagramLink',
+        title: 'Instagram Link',
+        description: 'Link to your Instagram profile',
+        type: 'url',
+    }),
+
+    defineField({
+        name: 'spotifyLink',
+        title: 'Spotify Link',
+        description: 'Link to your Spotify artist page',
+        type: 'url',
+    }),
+
+    defineField({
+        name: 'contactEmail',
+        title: 'Contact Email (for mailto link)',
+        description: 'Email address for the contact button',
+        type: 'string',
+    }),
+
+    defineField({
+        name: 'linktreeLink',
+        title: 'Linktree Link',
+        description: 'Link to your Linktree page',
+        type: 'url',
     }),
 
 

@@ -9,7 +9,7 @@ type Props = {
 
 const PressItemDisplay = ({item}: Props) => {
   return (
-    <div className="group py-3 transition-colors hover:bg-zinc-50/25">
+    <div className="group py-3 px-1 transition-transform bg-zinc-50/25 hover:scale-[1.02] duration-300">
         <div className="flex items-start gap-3">
             <span className="text-zinc-400 group-hover:text-zinc-600 transition-colors mt-1 text-sm">&rarr;</span>
             <div className="flex-1">

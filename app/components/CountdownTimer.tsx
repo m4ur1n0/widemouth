@@ -36,8 +36,8 @@ export function CountdownTimer({ datetime }: CountdownTimerProps) {
   }, [datetime]);
 
   if (isPast) {
-    return <span className="opacity-60">out now!</span>;
+    return <span className="opacity-60 font-family-garamond">out now!</span>;
   }
 
-  return <span>{countdown}</span>;
+  return <span className='lg:text-nowrap lg:whitespace-nowrap '>{countdown}</span>;
 }

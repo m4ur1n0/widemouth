@@ -129,6 +129,7 @@ export interface PressItem extends SanityDocument {
   link: string;
   title: string;
   description: string;
+  pageOrder: number;
 }
 
 // Site Settings Document Type
@@ -140,6 +141,10 @@ export interface SiteSettings extends SanityDocument {
   featuredVideos?: string[];
   email?: string;
   substackLink?: string;
+  instagramLink?: string;
+  spotifyLink?: string;
+  contactEmail?: string;
+  linktreeLink?: string;
 }
 
 // Site Settings with projected URLs (from queries)

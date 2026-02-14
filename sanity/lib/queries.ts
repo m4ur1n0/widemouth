@@ -13,10 +13,15 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     title,
     spotifyLink,
     image,
-    "imageUrl": image.asset->url
+    "imageUrl": image.asset->url,
+    timerEnd
   },
   featuredVideos,
-  substackLink
+  substackLink,
+  instagramLink,
+  spotifyLink,
+  contactEmail,
+  linktreeLink
 }
 `)
 
@@ -77,11 +82,12 @@ export const BAND_MEMBERS_QUERY = defineQuery(`
 `)
 
 export const PRESS_QUERY = defineQuery(`
-*[_type == "pressItem"] | order(_createdAt desc){
+*[_type == "pressItem"] | order(pageOrder asc){
   _id,
   link,
   title,
-  description
+  description,
+  pageOrder
 }
 `)
 

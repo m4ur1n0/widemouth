@@ -20,7 +20,7 @@ const SubscribeToSubstack = ({substackLink} : {substackLink: string}) => {
     return (
         <div className="w-full space-y-6 max-w-2xl my-16">
             <h2 className="text-2xl font-medium text-zinc-900 tracking-tight">
-                Witness Our Motion
+                Stay Notified
             </h2>
             <form className="flex gap-3" onSubmit={handleSubstackSubmit}>
                 <input
