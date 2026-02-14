@@ -40,4 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-STYLE_GUIDE.md
+
+*.md
+!README.md
+.claude

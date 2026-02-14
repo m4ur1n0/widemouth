@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navigation - hidden on mobile/tablet */}
-      <nav className={`hidden lg:flex w-full justify-between items-center px-12 py-5 text-[1.4rem] z-50 transition-all duration-200 ${
+      <nav className={`hidden lg:flex w-full justify-between items-center px-12 pt-5 pb-0 text-[1.4rem] z-50 transition-all duration-200 ${
         isSticky ? `sticky top-0 ${getBlurClasses()}` : 'absolute'
       } ${pathname.includes("/studio") && "hidden! pointer-events-none"} `}>
         <span className={`underline ${pathname === '/merch' && "font-bold"} transition-all duration-400`}>
@@ -75,9 +75,9 @@ const Navbar = () => {
           <Link href={"/press"}>press</Link>
         </span>
 
-        <div className='w-[30%] px-1 py-1 flex justify-center items-center'>
+        <div className='w-[30%] px-1 py-1 flex justify-center items-center '>
           <Link href="/">
-            <h1 className='font-family-fell! text-[4rem] scale-y-150 scale-x-90 lg:scale-x-90 select-none font-light'>
+            <h1 className='!font-family-fell text-[4rem] scale-y-150 scale-x-90 lg:scale-x-90 select-none font-light text-center'>
               WIDEMOUTH
             </h1>
           </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className='flex-1 flex justify-center'>
           <Link href="/" onClick={closeMenu}>
-            <h1 className='font-fell text-[2.5rem] sm:text-[3rem] scale-y-150 scale-x-90 select-none font-light'>
+            <h1 className='!font-family-fell text-[2.5rem] sm:text-[3rem] scale-y-150 scale-x-90 select-none font-light'>
               WIDEMOUTH
             </h1>
           </Link>

@@ -77,7 +77,7 @@ export default async function Home() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                     className="object-cover rounded-[50%] "
-                    quality={90}
+                    quality={80}
                     priority
                 />
 

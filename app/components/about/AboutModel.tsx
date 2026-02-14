@@ -148,7 +148,7 @@ const ModelViewer = forwardRef<ModelViewerRef, Props>(function ModelViewer(
         "disable-tap": true,
         "interaction-prompt": "none",
         "autoRotateDelay": 0,
-        loading: "lazy",
+        loading: "eager",
         exposure: "1",
         "shadow-intensity": "0",
         class: className,

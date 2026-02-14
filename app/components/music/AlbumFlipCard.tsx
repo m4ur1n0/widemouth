@@ -52,14 +52,14 @@ export default function AlbumFlipCard({
   }
 
   return (
-    <div className="flip-card-container group relative">
+    <div className="flip-card-container group relative w-[60vw] lg:w-[30vw] lg:max-w-[30vw] ">
       <button
         type="button"
         onClick={toggleFlip}
         onKeyDown={handleKeyDown}
         aria-label={`Flip album sleeve for ${title}`}
         className="flip-card-trigger w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950/40 focus-visible:ring-offset-2 rounded-sm"
-      >
+      > 
         {/* Perspective wrapper */}
         <div className="flip-card-perspective w-full aspect-square relative">
           {/* 3D rotating inner container */}
