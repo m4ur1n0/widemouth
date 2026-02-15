@@ -10,7 +10,7 @@ type Props = {
 
 const CollageStylePhoto = ({className = '', src, width = 400, height = 400}: Props) => {
   return (
-    <div className={`absolute pointer-events-none select-none ${className}`}>
+    <div className={`absolute pointer-events-none select-none -z-1 ${className}`}>
         <div className="relative">
             <Image
                 src={src}

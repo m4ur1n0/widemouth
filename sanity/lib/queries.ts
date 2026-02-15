@@ -26,11 +26,14 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
 `)
 
 export const ALBUMS_QUERY = defineQuery(`
-*[_type == "album"] | order(year desc, title asc){
+*[_type == "album"] | order(orderIndex asc){
   _id,
   title,
+  orderIndex,
+  month,
   year,
   spotifyLink,
+  bandcampLink,
   coverFront,
   "coverFrontUrl": coverFront.asset->url,
   coverBack,

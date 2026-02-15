@@ -34,17 +34,17 @@ const Navbar = () => {
     const scrollProgress = Math.min(scrollY / 400, 1)
 
     if (scrollProgress === 0) {
-      return 'bg-[#fbf7f0]/0'
+      return ''
     } else if (scrollProgress < 0.2) {
-      return 'bg-[#fbf7f0]/20 backdrop-blur-[2px]'
+      return '0 backdrop-blur-[2px]'
     } else if (scrollProgress < 0.4) {
-      return 'bg-[#fbf7f0]/30 backdrop-blur-[4px]'
+      return '0 backdrop-blur-[4px]'
     } else if (scrollProgress < 0.6) {
-      return 'bg-[#fbf7f0]/40 backdrop-blur-[6px]'
+      return '0 backdrop-blur-[6px]'
     } else if (scrollProgress < 0.8) {
-      return 'bg-[#fbf7f0]/50 backdrop-blur-[8px]'
+      return '0 backdrop-blur-[8px]'
     } else {
-      return 'bg-[#fbf7f0]/60 backdrop-blur-[12px]'
+      return '0 backdrop-blur-[12px]'
     }
   }
 

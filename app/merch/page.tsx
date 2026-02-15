@@ -27,16 +27,7 @@ const page = async () => {
                 {merchItems && merchItems.length > 0 ? (
                     merchItems.map((item) => (
                         <MerchItemDisplay key={item._id} {...item} />
-                        
-                    ))
-                ) : (
-                    <p className="col-span-full text-center text-zinc-500">No merch items available</p>
-                )}
 
-                {merchItems && merchItems.length > 0 ? (
-                    merchItems.map((item) => (
-                        <MerchItemDisplay key={item._id} {...item} />
-                        
                     ))
                 ) : (
                     <p className="col-span-full text-center text-zinc-500">No merch items available</p>

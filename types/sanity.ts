@@ -70,8 +70,11 @@ export interface FeaturedProjectWithUrl extends FeaturedProject {
 export interface Album extends SanityDocument {
   _type: 'album';
   title: string;
+  orderIndex: number;
+  month: string;
   year: number;
   spotifyLink?: string;
+  bandcampLink?: string;
   coverFront: SanityImage;
   coverBack?: SanityImage;
   songs?: Song[];

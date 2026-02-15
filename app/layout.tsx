@@ -66,7 +66,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${farmhouse.variable} ${irishGrover.variable} ${fellEnglish.variable} ${garamond.variable} ${garamondItalics.variable} ${ui.page} w-screen overflow-x-hidden`}
       >
-        <div className="fixed inset-0 z-[-1] bg-[#fbf7f0]">
+        <div className="fixed inset-0 z-[-1] bg-[#f7e1bc]">
           <Image
             src="/images/widemouth-landscape.png"
             alt=""

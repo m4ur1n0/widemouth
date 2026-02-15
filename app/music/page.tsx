@@ -38,7 +38,7 @@ export default async function MusicPage() {
                     <main className="w-full px-6 sm:px-8 lg:px-12 py-12 lg:py-16  ">
                         {/** on that collage shit */}
                         <CollageStylePhoto
-                            src="/images/decoration2.png"
+                            src="/images/decoration7.png"
                             width={350}
                             height={350}
                             className="-left-[9%] top-[7rem] hidden md:block"
@@ -86,10 +86,10 @@ export default async function MusicPage() {
                         
                         
                         <CollageStylePhoto
-                            src="/images/decoration7.png"
+                            src="/images/decoration2.png"
                             width={300}
                             height={300}
-                            className="-left-[5%] top-[88rem] hidden md:block"
+                            className="-left-[5%] top-[93rem] hidden md:block"
                         />
 
                         <CollageStylePhoto

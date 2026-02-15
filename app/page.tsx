@@ -61,6 +61,10 @@ export default async function Home() {
         className="right-[10%] md:top-[86rem] lg:top-[102rem] hidden md:block"
       /> */}
 
+      <Image src={"/images/cleo3.png"} alt={"Cleo the dog"} width={600} height={600} className="hidden lg:block absolute left-32 top-[60rem] pointer-events-none select-none -z-1" />
+      <Image src={"/images/cleo-2.png"} alt={"Cleo the dog"} width={300} height={300} className="hidden lg:block absolute right-32 top-[120rem] pointer-events-none select-none -z-1" />
+
+
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pt-32 pb-16 px-16 space-y-24 relative z-10">
 
         {siteSettings?.bandPhoto && (
@@ -219,7 +223,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 
 function Instagram({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -229,7 +233,7 @@ function Instagram({ className = "" }: { className?: string }) {
 
 function Mail({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
       <polyline points="22,6 12,13 2,6" />
     </svg>
@@ -238,7 +242,7 @@ function Mail({ className = "" }: { className?: string }) {
 
 function Link({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${className}`}>
       <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
       <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
     </svg>

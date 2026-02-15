@@ -27,7 +27,9 @@ export default function AlbumCard({ album }: AlbumCardProps) {
 
         {/* Credits: year, spotify link, etc */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[14px] md:text-[15px] text-zinc-700">
-          {album.year && <span className={ui.mono}>{album.year}</span>}
+          {album.month && album.year && (
+            <span className={ui.mono}>{album.month} {album.year}</span>
+          )}
 
           {album.songs && album.songs.length > 0 && (
             <>

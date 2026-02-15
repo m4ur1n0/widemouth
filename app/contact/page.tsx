@@ -56,12 +56,12 @@ export default async function ContactPage() {
         </div>
 
         {/* Decorative image - positioned in flow */}
-        <div className="hidden md:block absolute bottom-48 right-42 w-[20vw] h-[20vw] pointer-events-none">
+        <div className="hidden md:block absolute bottom-56 right-42 w-[20vw] h-[20vw] pointer-events-none">
           <Image
             src="/images/cleo-normal.png"
             alt="Cleo the dog"
-            width={1200}
-            height={1200}
+            width={1300}
+            height={1300}
           />
         </div>
       </main>
